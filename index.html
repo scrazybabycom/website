@@ -29,7 +29,9 @@
     <script>
     	function areaCheck(){
     		var area = geoip_country_code();
-    		alert(area);
+    		if(area=="CN"){
+    		  window.location.href="http://scrazybabycom.github.io/websitecn/";
+    		}
     	}
     </script>
     
