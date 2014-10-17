@@ -25,13 +25,18 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-    
-    
+    <script type='text/javascript' src='http://j.maxmind.com/app/geoip.js'> </script>
+    <script>
+    	function areaCheck(){
+    		var area = geoip_country_code();
+    		alert(area);
+    	}
+    </script>
     
     
   </head>
 
-  <body>
+  <body onload="areaCheck()">
    
      <div class="container">
       
