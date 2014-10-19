@@ -50,7 +50,7 @@ body {
 }
 }
 
-h1 {text-align:left; font-size:32px;}
+h1 {text-align:left; font-size:28px;}
 h2 {text-align:left; font-size:28px; margin-top:10px;}
 
 @media (min-width:768px) {
