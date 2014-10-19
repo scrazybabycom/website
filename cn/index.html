@@ -1,41 +1,15 @@
 <!DOCTYPE html>
-<script>
-	function playPause() {
- 		
-		var myVideo = document.getElementsByTagName('video')[0];
-		var ttlDiv = document.getElementById("ttlDiv");
-		var posterDiv = document.getElementById("posterDiv");
-		var ghostDiv = document.getElementById("ghostDiv");
-		
-		if (myVideo.paused){
-		
-		 	myVideo.play();
-			ttlDiv.className = "cb_ttl hidden";
-			posterDiv.className = "cb_poster hidden";
-		}else{
-			
-      	ttlDiv.className = "cb_ttl";
-      	
-     
-			
-		   myVideo.pause();
-		   
-		}
-	}
-	
-
-</script>
 <html lang="en"><head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="imgs/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="imgs/favicon.ico" rel="icon" type="image/icon">
 		<link href="imgs/logo_2.png" rel="apple-touch-icon-precomposed" type="image/png">
 		<link href="imgs/logo_3.png" sizes="72x72" type="image/png">
 		<link href="imgs/logo_4.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="imgs/favicon.ico">
+    
 
     <title>Mars by crazybaby</title>
 
@@ -49,9 +23,32 @@
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     
-    <style type="text/css">
-
-	</style>
+    <script>
+			function playPause() {
+		 		
+				var myVideo = document.getElementsByTagName('video')[0];
+				var ttlDiv = document.getElementById("ttlDiv");
+				var posterDiv = document.getElementById("posterDiv");
+				var ghostDiv = document.getElementById("ghostDiv");
+				
+				if (myVideo.paused){
+				
+				 	myVideo.play();
+					ttlDiv.className = "cb_ttl hidden";
+					posterDiv.className = "cb_poster hidden";
+				}else{
+					
+		      	ttlDiv.className = "cb_ttl";
+		      	
+		     
+					
+				   myVideo.pause();
+				   
+				}
+			}
+			
+		
+		</script>
     
   </head>
 
