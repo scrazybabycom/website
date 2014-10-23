@@ -8,12 +8,12 @@
 		<link href="imgs/apple-touch-icon-iphone4-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
 		
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Crazybaby是一家子里于影音设备创新与设计的高科技公司!">
-		<meta name="keywords" content="best wireless speakers,wifi speakers,bluetooth speakers,portable speakers,best surround sound system,best wireless speakers,levitation speakers">
+    <meta name="description" content="Crazybaby 疯孩科技">
+		<meta name="keywords" content="best wireless speakers,wifi speakers,bluetooth speakers,portable speakers,best surround sound system,best wireless speakers,levitation speakers，高级无线音箱,wifi 音箱,蓝牙音箱,可携带音箱">
     <meta name="author" content="">
     
 
-    <title>高级无线音箱|wifi 音箱|蓝牙音箱|可携带音箱|crazybaby</title>
+    <title>crazybaby</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -22,9 +22,10 @@
     <!-- Custom styles for this template -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     
-      <script src="js/html5shiv.min.js"></script>
-      <script src="js/respond.min.js"></script>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
     
+    <script src="js/jquery.min.js"></script>
     <script>
 			function playPause() {
 		 		
@@ -49,13 +50,47 @@
 				}
 			}
 			
-		
+			$(document).ready(function() {
+
+				$('#form1').submit(function() {
+				
+					jQuery.ajax({
+					
+						url:'http://127.0.0.1:8089/kos/user.subscription.htm',
+						
+						data:$('#form1').serialize(),
+						
+						type:"POST",
+						
+						beforeSend:function() {  
+						
+							alert("beforeSend");
+						
+						},
+						
+						success:function() {
+						
+							alert("success");
+						
+						}
+					
+					});
+					
+					returnfalse;
+				
+				});
+				
+			});
+
 		</script>
     
   </head>
 
   <body>
-  
+  <form id="form1" name="form1">
+  	<input type="text" name="email" value="2@2.2" />
+  	<input type="submit"/>
+  </form>
   <div style="float:none; position:absolute; left:0; right:0; background:#2c2c2c; ">
   <div class="container" style="padding:0;">
   
@@ -558,7 +593,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.min.js"></script>
+    
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
