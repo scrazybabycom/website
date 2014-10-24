@@ -52,33 +52,34 @@
 			
 			$(document).ready(function() {
 
-				$('#form1').submit(function() {
-				
-					jQuery.ajax({
+				$("#submitBtn").click(function(){
 					
-						url:'http://127.0.0.1:8089/kos/user.subscription.htm',
-						
-						data:$('#form1').serialize(),
-						
-						type:"POST",
-						
-						beforeSend:function() {  
-						
-							alert("beforeSend");
-						
-						},
-						
-						success:function() {
-						
-							alert("success");
-						
-						}
+					var email = $("#email").val();
 					
-					});
+					var msgDiv = document.getElementById("msgDiv");
+              		
+					if(email==""){
+						msgDiv.innerHTML = "请输入邮箱";
+						msgDiv.style.display = "";
+					}
 					
-					returnfalse;
-				
-				});
+			  	$.ajax({
+              type: "POST",
+              url: "http://news.crazybaby.com/user.subscriptionCn.htm",
+              data: "{'email':email}",
+              success: function(msg) {
+              	if(msg=="1"){
+              		msgDiv.innerHTML = "感谢您的订阅";
+              		msgDiv.style.display = "";
+              	}else{
+              		msgDiv.innerHTML = "邮箱格式错误";
+              		msgDiv.style.display = "";
+              	}
+              }
+          });
+			
+			  });
+  
 				
 			});
 
@@ -566,7 +567,32 @@
     <div class="dv_36 hidden-sm"></div>
  
     
+<div class="container">
+  <div class="starter-template">
+      
+    <div class="row">
+        <div class="col-xs-hidden col-md-1"></div>
+        <div class="col-xs-12 col-md-4"><h3>Stay tuned. <i>订阅我们的讯息.</i></h3></div>
+        <div class="col-xs-12 col-md-6">
+           <div class="row">
+           <div class="col-xs-9" style="padding:0;"><div class="cb_merge_var"><input size="18" placeholder="Your email" class="cb_input" id="email" name="email" type="text"></div><!-- /cb_merge_var -->
+           <div class="cb_ty" id="msgDiv" style="display:none">感谢您的订阅。</div>
+           </div>
+           <div class="col-xs-3" style="padding:0;"><div class="cb_signup_submit" id="submitBtn">
+			<input value="Send" type="submit">
+		</div><!-- /cb_signup_submit --></div></div>
 
+</div>
+        </div>
+        
+        <div class="dv_14"></div>
+        
+  </div>
+        
+    </div><!-- /.container -->
+    
+    <div class="dv_36"></div>
+    
 <div class="cb_wrap cb_bgc_1">
   <div class="container" style="padding:0; text-align:center;">
   

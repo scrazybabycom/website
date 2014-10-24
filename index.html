@@ -31,7 +31,9 @@
 
 h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font-size:34px; }
 
-	</style>
+		</style>
+	
+		<script src="js/jquery.min.js"></script>
     <script>
 			function playPause() {
 		 		
@@ -65,6 +67,41 @@ h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font
 			}
 		   
 			document.onload=areaCheck();
+			
+			$(document).ready(function() {
+
+				$("#submitBtn").click(function(){
+					
+					var email = $("#email").val();
+					
+					var msgDiv = document.getElementById("msgDiv");
+              		
+					if(email==""){
+						msgDiv.innerHTML = "Email is empty.";
+						msgDiv.style.display = "";
+					}
+					
+			  	$.ajax({
+              type: "POST",
+              url: "http://news.crazybaby.com/user.subscription.htm",
+              data: "{'email':email}",
+              success: function(msg) {
+              	if(msg=="1"){
+              		msgDiv.innerHTML = "Thank you, you've been signed up!";
+              		msgDiv.style.display = "";
+              	}else{
+              		msgDiv.innerHTML = "Email is not correct.";
+              		msgDiv.style.display = "";
+              	}
+              }
+          });
+			
+			  });
+  
+				
+			});
+			
+			
 		</script>
   </head>
 
@@ -549,7 +586,32 @@ Mars is a new hub for music that fuses sci-fi design with precise, thoughtful en
     <div class="dv_36 hidden-sm"></div>
  
     
+<div class="container">
+  <div class="starter-template">
+      
+    <div class="row">
+        <div class="col-xs-hidden col-md-1"></div>
+        <div class="col-xs-12 col-md-4"><h3>Stay tuned. <i>Sign up for our newsletter.</i></h3></div>
+        <div class="col-xs-12 col-md-6">
+           <div class="row">
+           <div class="col-xs-9" style="padding:0;"><div class="cb_merge_var"><input size="18" placeholder="Your email" class="cb_input" id="email" name="email" type="text"></div><!-- /cb_merge_var -->
+           <div class="cb_ty" id="msgDiv" style="display:none">Thank you, you've been signed up!</div>
+           </div>
+           <div class="col-xs-3" style="padding:0;"><div class="cb_signup_submit" id="submitBtn">
+			<input value="Send" type="submit">
+		</div><!-- /cb_signup_submit --></div></div>
 
+</div>
+        </div>
+        
+        <div class="dv_14"></div>
+        
+  </div>
+        
+    </div><!-- /.container -->
+    
+    <div class="dv_36"></div>
+    
 <div class="cb_wrap cb_bgc_1">
   <div class="container" style="padding:0; text-align:center;">
   
@@ -573,7 +635,7 @@ Mars is a new hub for music that fuses sci-fi design with precise, thoughtful en
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.min.js"></script>
+    
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
