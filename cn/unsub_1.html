@@ -57,18 +57,13 @@ a.unsub {background:#333; color:#eee; padding:15px 30px;}
 			
 
 			$("#unsubBtn").click(function(){
-				
-				var email = $("#email").val();
-				
-				var msgDiv = document.getElementById("msgDiv");
-            		
+				  		
 				if(email==""){
-					msgDiv.innerHTML = "";
-					msgDiv.style.display = "";
+					
 					return false;
 				}
 				
-				$.getJSON("http://119.28.3.150/user.unSubscriptionCn.htm?email="+email+"&jsoncallback=?",
+				$.getJSON("http://news.crazybaby.com/user.unSubscriptionCn.htm?email="+email+"&jsoncallback=?",
 			      function(json){
 			      	
             	document.location.href = "http://crazybaby.com/cn/unsub_2.html"
@@ -101,7 +96,7 @@ a.unsub {background:#333; color:#eee; padding:15px 30px;}
     <h2>Unsubscribe<br>Your email address will be unsubscribed from our list.</h2>
       <div class=dv20></div><div class=dv20></div>
 
-    <p style="padding:0;"><a id="unsubBtn" class=unsub href="#">Unsubscribe</a></p>
+    <p style="padding:0;"><a id="unsubBtn" class=unsub>Unsubscribe</a></p>
     </div></div></div>
     
   
