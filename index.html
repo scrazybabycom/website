@@ -79,22 +79,21 @@ h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font
 					if(email==""){
 						msgDiv.innerHTML = "Email is empty.";
 						msgDiv.style.display = "";
+						return false;
 					}
 					
-			  	$.ajax({
-              type: "POST",
-              url: "http://news.crazybaby.com/user.subscription.htm",
-              data: "{'email':email}",
-              success: function(msg) {
-              	if(msg=="1"){
-              		msgDiv.innerHTML = "Thank you, you've been signed up!";
-              		msgDiv.style.display = "";
-              	}else{
-              		msgDiv.innerHTML = "Email is not correct.";
-              		msgDiv.style.display = "";
-              	}
-              }
-          });
+					$.getJSON("http://news.crazybaby.com/user.subscription.htm?email="+email+"&jsoncallback=?",
+				      function(json){
+				      	
+					      if(json.msg=="1"){
+	            		msgDiv.innerHTML = "Thank you, you've been signed up!";
+	            		msgDiv.style.display = "";
+	            	}else{
+	            		msgDiv.innerHTML = "Email is not correct.";
+	            		msgDiv.style.display = "";
+	            	}
+					  	});
+			  	
 			
 			  });
   

@@ -61,22 +61,21 @@
 					if(email==""){
 						msgDiv.innerHTML = "请输入邮箱";
 						msgDiv.style.display = "";
+						return false;
 					}
 					
-			  	$.ajax({
-              type: "POST",
-              url: "http://news.crazybaby.com/user.subscriptionCn.htm",
-              data: "{'email':email}",
-              success: function(msg) {
-              	if(msg=="1"){
-              		msgDiv.innerHTML = "感谢您的订阅";
-              		msgDiv.style.display = "";
-              	}else{
-              		msgDiv.innerHTML = "邮箱格式错误";
-              		msgDiv.style.display = "";
-              	}
-              }
-          });
+					$.getJSON("http://news.crazybaby.com/user.subscriptionCn.htm?email="+email+"&jsoncallback=?",
+				      function(json){
+				      	
+					      if(json.msg=="1"){
+	            		msgDiv.innerHTML = "感谢您的注册";
+	            		msgDiv.style.display = "";
+	            	}else{
+	            		msgDiv.innerHTML = "邮箱格式错误";
+	            		msgDiv.style.display = "";
+	            	}
+					  	});
+			  	
 			
 			  });
   
