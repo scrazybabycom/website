@@ -52,11 +52,7 @@ a.unsub {background:#333; color:#eee; padding:15px 30px;}
 	}
 	document.onload=ppp();
 	
-	$(document).ready(function() {
-
-			
-
-			$("#unsubBtn").click(function(){
+	function unsubscription(){
 				  		
 				if(email==""){
 					
@@ -71,10 +67,7 @@ a.unsub {background:#333; color:#eee; padding:15px 30px;}
 				  	});
 		  	
 		
-		  });
-
-			
-		});
+		  }
 </script>
     
   </head>
@@ -96,7 +89,7 @@ a.unsub {background:#333; color:#eee; padding:15px 30px;}
     <h2>Unsubscribe<br>Your email address will be unsubscribed from our list.</h2>
       <div class=dv20></div><div class=dv20></div>
 
-    <p style="padding:0;"><a id="unsubBtn" class=unsub>Unsubscribe</a></p>
+    <p style="padding:0;"><a id="unsubBtn" href="javascript:unsubscription()" class=unsub>Unsubscribe</a></p>
     </div></div></div>
     
   
