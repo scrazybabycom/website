@@ -86,10 +86,10 @@ h1 {
 
 .cb_line {float:none; display:inline-block; padding:0px; height:auto; margin-top:0px; margin-bottom:0px;}
 
-.cb_wrap .cbp {clear:both; display:inline-block; text-align:center;  margin:0; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-weight:normal; font-size:10px; line-height:16px; color:#e3e3e3; vertical-align:text-bottom; }
+.cb_wrap .cbp {clear:both; display:inline-block; text-align:center;  margin:0; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-weight:normal; font-size:11px; line-height:16px; color:#e3e3e3; vertical-align:text-bottom; }
 .cb_wrap .cbp a {color:#888;}
 
-ul.piped {clear:both; display:inline-block; margin:0; list-style:none; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-weight:normal; font-size:10px; line-height:16px; color:#e3e3e3; padding:0; vertical-align:text-bottom;}
+ul.piped {clear:both; display:inline-block; margin:0; list-style:none; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-weight:normal; font-size:11px; line-height:16px; color:#e3e3e3; padding:0; vertical-align:text-bottom;}
 ul.piped li {float:left; display:inline-block; text-align:center;margin-right:16px;}
 ul.piped li a {border-left:#444 1px solid; padding:0; padding-left:16px; color:#888;}
 ul.piped li a.first {border:none;}
