@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+
+<html lang="en">
+	<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="imgs/favicon.ico" rel="icon" type="image/icon">
+    <link href="imgs/favicon.ico" rel="icon" type="image/x-icon">
 		<link href="imgs/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png">
 		<link href="imgs/apple-touch-icon-ipad-precomposed.png" rel="apple-touch-icon-precomposed"sizes="72x72" type="image/png">
 		<link href="imgs/apple-touch-icon-iphone4-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
 		
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Crazybaby 疯孩科技">
-		<meta name="keywords" content="best wireless speakers,wifi speakers,bluetooth speakers,portable speakers,best surround sound system,best wireless speakers,levitation speakers，高级无线音箱,wifi 音箱,蓝牙音箱,可携带音箱">
+    <meta name="description" content="Crazybaby technology">
+		<meta name="keywords" content="best wireless speakers,wifi speakers,bluetooth speakers,portable speakers,best surround sound system,best wireless speakers,levitation speakers,best wireless speakers,wifi speakers,bluetooth speakers,portable speakers">
     <meta name="author" content="">
     
 
@@ -24,8 +26,14 @@
     
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
-    
-    <script src="js/jquery.min.js"></script>
+    <script type='text/javascript' src='http://j.maxmind.com/app/geoip.js'> </script>
+    <style type="text/css">
+
+h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font-size:34px; }
+
+		</style>
+	
+		<script src="js/jquery.min.js"></script>
     <script>
 			function playPause() {
 		 		
@@ -50,6 +58,16 @@
 				}
 			}
 			
+			function areaCheck(){
+				var area = geoip_country_code();
+				if(area=="CN"){
+				  window.location.href="cn/";
+				}
+		
+			}
+		   
+			document.onload=areaCheck();
+			
 			$(document).ready(function() {
 
 				$("#submitBtn").click(function(){
@@ -59,19 +77,19 @@
 					var msgDiv = document.getElementById("msgDiv");
               		
 					if(email==""){
-						msgDiv.innerHTML = "请输入邮箱";
+						msgDiv.innerHTML = "Email is empty.";
 						msgDiv.style.display = "";
 						return false;
 					}
 					
-					$.getJSON("http://news.crazybaby.com/user.subscriptionCn.htm?email="+email+"&jsoncallback=?",
+					$.getJSON("http://news.crazybaby.com/user.subscription.htm?email="+email+"&jsoncallback=?",
 				      function(json){
 				      	
 					      if(json.msg=="1"){
-	            		msgDiv.innerHTML = "感谢您的注册";
+	            		msgDiv.innerHTML = "Thank you, you've been signed up!";
 	            		msgDiv.style.display = "";
 	            	}else{
-	            		msgDiv.innerHTML = "邮箱格式错误";
+	            		msgDiv.innerHTML = "Email is not correct.";
 	            		msgDiv.style.display = "";
 	            	}
 					  	});
@@ -81,9 +99,9 @@
   
 				
 			});
-
+			
+			
 		</script>
-    
   </head>
 
   <body>
@@ -100,15 +118,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://crazybaby.com/cn"></a>
+      <a class="navbar-brand" href="http://crazybaby.com"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="border:none; background:#333;">
      
       <ul class="nav navbar-nav navbar-right">
-        <li class=bt_ks_1><a class="cb_bt bt_wb" target="_blank" href="http://weibo.com/u/5279485785">关注我们的微博</a></li>
-        <li class="bt_ks_1 ks_1_wx"><a class="cb_bt bt_wx" target="_blank" href="imgs/weixin_codescan.jpg">关注我们的微信</a><div class=cb_qrcode></div></li>
+        <li class=bt_ks_1><a class="cb_bt bt_fb" href="https://www.facebook.com/pages/Crazybaby/283206838547558?sk=timeline">Follow us on Facebook</a></li>
+        <li class=bt_ks_1><a class="cb_bt bt_tw" href="https://twitter.com/crazybabyaudio">Follow us on Twitter</a></li>
         
       </ul>
    <!--   
@@ -130,10 +148,10 @@
 <div class="cb_nav" id=nav_mars_1>
   <div class="cb_nav_brand xt_mars"></div>
   <div class=cb_nav_tab>
-    <span><a href="#" title="best wireless speaker" rel="tag">概览</a></span>
-		<span><a href="#jp1" title="home sound system, best sound system" rel="tag">声学</a></span>
-		<span><a href="#jp2" title="wireless audio" rel="tag">技术规格</a></span>
-		<span><a class=cb_disabled href="#" title="kickstarter,crowdfund" rel="tag">即将众筹</a></span></div>
+    <span><a href="#" title="best wireless speaker" rel="tag">Overview</a></span>
+		<span><a href="#jp1" title="home sound system, best sound system" rel="tag">Sound</a></span>
+		<span><a href="#jp2" title="wireless audio" rel="tag">Tech Specs</a></span>
+		<span><a class=cb_disabled href="#"title="kickstarter,crowdfund" rel="tag">Crowdfunding soon</a></span></div>
 </div>
 </div>
 </div>
@@ -142,7 +160,7 @@
 <div class="cb_nav hidden-sm hidden-md hidden-lg"  id=nav_mars_2>
   <div class="cb_nav_brand xt_mars"></div>
   <div class=cb_nav_tab>
-  <span class=tab_support><a class=cb_disabled href="#" title="kickstarter,crowdfund" rel="tag">即将众筹</a></span></div>
+  <span class=tab_support><a class=cb_disabled href="#" title="kickstarter,crowdfund" rel="tag">Crowdfunding soon</a></span></div>
 </div>
 
 <div class=dv_41></div>
@@ -161,7 +179,7 @@
      <div class="dv_100 hidden-xs hidden-md hidden-lg"></div><div class="dv_60 hidden-xs hidden-md hidden-lg"></div>
     <div class="dv_100 hidden-xs hidden-sm hidden-lg"></div><div class="dv_100 hidden-xs hidden-sm hidden-lg"></div>
      <div class="dv_300 hidden-xs hidden-sm hidden-md"></div>
-     <span><img class="img-responsive hidden-xs" src="imgs/ttl_mars.png"/></span></div>
+     <span><img class="img-responsive hidden-xs" src="imgs/play_mars_1.png"/></span></div>
      
      <div id="posterDiv" class="cb_poster">
        <div class="dv_50 hidden-xs hidden-sm hidden-md"></div>
@@ -214,7 +232,7 @@
       
         <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-7"><h1 style="font-family:Microsoft YaHei,\5FAE\8F6F\96C5\9ED1;">极致视听，零损耗音源开山之作</h1></div>
+        <div class="col-md-7"><h1>Levitate with serious sound system.</h1></div>
         <div class="col-md-2"></div></div>
         
         <div class="dv_1 hidden-xs"></div>
@@ -223,7 +241,8 @@
         <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-7">
-        <p class="lead"><strong>纯正音频组合，不仅仅是悬浮。</strong><br>科幻设计构成了Mars的完美音乐播放器——梦幻般的悬浮体。基座低音炮系统声音可以调节，以适应各种音乐模式，共同保障了Mars强大得令人难以置信的完美音质。
+        <p class="lead"><strong>Levitation is a new sound solution.</strong><br>Placing wireless speakers directly on a plane surface led to a loss of audio quality. If letting wireless speakers levitate, it will bring us a new level of listening experience No one has imagined before.<br><br>
+Mars is a new hub for music that fuses sci-fi design with precise, thoughtful engineering. The acoustic system with subwoofer amplifies any soundtrack, which promising to powerful and incredible sound.
 </p></div>
         <div class="col-md-2"></div></div></div>
 
@@ -240,7 +259,7 @@
       
         <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-7"><h1 style="font-family:Microsoft YaHei,\5FAE\8F6F\96C5\9ED1;">精密超薄构造，科技的极致是艺术</h1></div>
+        <div class="col-md-7"><h1>Precisely engineered. And thinnest.</h1></div>
         <div class="col-md-2"></div></div>
         
         <div class="dv_1 hidden-xs"></div>
@@ -249,7 +268,7 @@
         <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-7">
-        <p class="lead">悬浮体部分将发声集成系统，全部封装在小于4cm高度的密封腔体内，精密线路，成就意想不到的科技艺术。</p><br><br><br><br></div>
+        <p class="lead"><strong>Piece of art.</strong><br>We have made lots of achievements that have never been done before. In order to put all these components in such a thin object, it’s really an engineering challenge. The outcome is a thinnest and compact design, just like a piece of art.</p><br><br><br><br><br><br></div>
         <div class="col-md-2"></div></div>
         <img class="img-responsive" src="imgs/s19.jpg"/>
         </div>
@@ -266,7 +285,7 @@
       
         <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-7"><h1 style="font-family:Microsoft YaHei,\5FAE\8F6F\96C5\9ED1;">便携Hi-Fi音响组合，分合随意</h1></div>
+        <div class="col-md-7"><h1>Portable Hi-Fi system.</h1></div>
         <div class="col-md-2"></div></div>
         
         <div class="dv_1 hidden-xs"></div>
@@ -275,7 +294,7 @@
         <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-7">
-        <p class="lead">悬浮体发声单元由1.75英寸超薄全频扬声器与无源辐射器构成。配备CSRaptX™解码器。Mars基座配备4.5英寸重低音炮以及10000毫安充电电池。</p></div>
+        <p class="lead">Mars packed with a 1.75 inch full-range speaker and a passive radiator in floating object. Embedded CSR AptX codec delivers uncompromised high fidelity sound wirelessly. Deep bass. We did not stop from that, by adding a 4.5-inch subwoofer and 10,000mAH powerbank inside base underneath, Mars delivers powerful bass and great music experience anywhere.</p></div>
         <div class="col-md-2"></div></div></div>
 
     </div><!-- /.container -->    
@@ -290,7 +309,7 @@
       
         <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-7"><h1 style="font-family:Microsoft YaHei,\5FAE\8F6F\96C5\9ED1;">航空级别铝合金 —— 极轻极优雅</h1></div>
+        <div class="col-md-7"><h1>Aeronautical aluminum.</h1></div>
         <div class="col-md-2"></div></div>
         
         <div class="dv_1 hidden-xs"></div>
@@ -299,14 +318,14 @@
         <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-7">
-        <p class="lead">Mars结实耐用，外观cool而优雅。</p></div>
+        <p class="lead"><strong>Mars is a elegant levitating object.</strong><br>For ultimate floating performance, it needs to be lightweight, rigid and style. By implementing aeronautical aluminum used by most aircrafts, Mars not only looks cool and elegant, but also super durable and safe to fly with.</p></div>
          <div class="col-md-1"></div>
         <div class="col-md-2">
            <div class=cb_side_wrap>
            <div class=cb_dvl_1></div>
-           <p class="lead cb_lead_s">工艺</p>
+           <p class="lead cb_lead_s">Craft by</p>
            <div class=cb_spl><span class=spl_alu></span></div>
-           <p class="lead cb_lead_s">机加工<br>航空级别铝合金</p>
+           <p class="lead cb_lead_s">Machined<br>aeronautical aluminum</p>
            </div>
          </div></div></div>
 
@@ -322,7 +341,7 @@
       
         <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-7"><h1 style="font-family:Microsoft YaHei,\5FAE\8F6F\96C5\9ED1;">“不止于趣”的稳定悬浮系统</h1></div>
+        <div class="col-md-7"><h1>Gravitron levitation.</h1></div>
         <div class="col-md-2"></div></div>
         
         <div class="dv_1 hidden-xs"></div>
@@ -331,14 +350,14 @@
         <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-7">
-        <p class="lead">采用全球范围内最先进和稳定的磁悬浮系统——Gravitron®专利技术。</p></div>
+        <p class="lead"><strong>Mars is amazing.</strong><br>It is entirely different from other wireless speakers, due to the innovative Graviton technology, originally invented by Dr Lorne Whitehead and Dr. Harold Davis in their lab at the University of British Columbia, later improvement by Dr Martin Simon from UCLA, which is the world’s best magnetic levitation system from a single plane yet. Gravitron is more reliable, safer and user friendly. Join the revolution with Mars for a better levitation.</p></div>
          <div class="col-md-1"></div>
         <div class="col-md-2">
            <div class=cb_side_wrap>
            <div class=cb_dvl_1></div>
-           <p class="lead cb_lead_s">悬浮技术</p>
+           <p class="lead cb_lead_s">Levitate with</p>
            <div class=cb_spl><span class=spl_grv></span></div>
-           <p class="lead cb_lead_s">Gravitron 系统</p>
+           <p class="lead cb_lead_s">Gravitron technology</p>
            </div>
          </div></div></div>
 
@@ -348,7 +367,25 @@
     <div class="dv_36 hidden-sm"></div>
     <div class="cb_pic"><img class="img-responsive" src="imgs/s4.jpg"/></div>
      
-    
+    <div class="container" id=jp1>
+
+      <div class="starter-template">
+      
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7"><h1>Sound matter.</h1></div>
+        <div class="col-md-2"></div></div>
+        
+        <div class="dv_1 hidden-xs"></div>
+        <div class="dv_22 hidden-sm"></div>
+        
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+        <p class="lead"><strong>Hearing the differences.</strong><br>Mars is built for high fidelity audio and excitement for users who have never fully experienced the emotion of sound because of sub-standard products. It transforms your listening experience with cool, elegant designs, loud and incredible sound in the air.<br><br>Sound quality is ensured with precise acoustic engineering. Mars makes every music track a new hearing experience with deep, thumping bass, bold midrange and crisp, brilliant highs. All in this intuitive and elegant package.</p></div>
+        <div class="col-md-2"></div></div></div>
+
+    </div><!-- /.container -->   
     
     <div class="dv_55 hidden-xs"></div>
     <div class="dv_36 hidden-sm"></div>
@@ -362,7 +399,7 @@
       
         <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-7"><h1 style="font-family:Microsoft YaHei,\5FAE\8F6F\96C5\9ED1;">难以超越的音域，超宽频响范围</h1></div>
+        <div class="col-md-7"><h1>Incredible Sound</h1></div>
         <div class="col-md-2"></div></div>
         
         <div class="dv_1 hidden-xs"></div>
@@ -371,7 +408,7 @@
         <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-7">
-        <p class="lead">Mars1.1磁悬浮低音炮组合频响范围为80Hz ~ 21kHz，加上360度音源设计。<br><br><br><br><!--img class="img-responsive" src="imgs/freqrange_1.png"/--></p></div>
+        <p class="lead"><strong>Mars is a 1.1 speaker system.</strong><br>It combines a 1.75-inch full range speaker driver with a 4.5 inch sub-woofer to deliver a high-fidelity and incredible sound. There is no way back to other sub-engineered speakers after you listening to the Mars.<br><br><br><br><!--img class="img-responsive" src="imgs/freqrange_1.png"/--></p></div>
         <div class="col-md-2"></div></div></div>
 
     </div><!-- /.container -->    
@@ -382,18 +419,18 @@
      
     <div class="container">
 
-      <div class="starter-template" style="font-family:Microsoft YaHei,\5FAE\8F6F\96C5\9ED1">
+      <div class="starter-template">
       
         <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-4"><div class=cb_spl><span class=spl_ble></span></div><h2 class=cb_color_1>蓝牙 4.0</h2><div class="row"><div class="col-xs-12"><p class="lead"></p></div></div></div>
-        <div class="col-md-4"><div class=cb_spl><span class=spl_dbp></span></div><h2 class=cb_color_1>配对方案</h2><div class="row"><div class="col-xs-12"><p class="lead"></p></div></div></div>
+        <div class="col-md-4"><div class=cb_spl><span class=spl_ble></span></div><h2 class=cb_color_1>Bluetooth 4.0</h2><div class="row"><div class="col-xs-12"><p class="lead">Mars features latest Bluetooth 4.0 technology that allows any connections with Bluetooth-Smart devices, smartphones, tablets, laptops, and music players. Control all your music from the palm of your hand via wireless streaming technology.</p></div></div></div>
+        <div class="col-md-4"><div class=cb_spl><span class=spl_dbp></span></div><h2 class=cb_color_1>Double Up</h2><div class="row"><div class="col-xs-12"><p class="lead">Take turns playing songs with Mars advanced Bluetooth chip that allows two devices to be paired at the same time. When you Double Up, you connect two Mars together for bigger sound and true stereo surrounding sound.</p></div></div></div>
         <div class="col-md-3"></div></div>
         
         <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-4"><div class=cb_spl><span class=spl_mtp></span></div><h2 class=cb_color_1>环绕音效</h2><div class="row"><div class="col-xs-12"><p class="lead"></p></div></div></div>
-        <div class="col-md-4"><div class=cb_spl><span class=spl_atv></span></div><h2 class=cb_color_1>自动音量</h2><div class="row"><div class="col-xs-12"><p class="lead"></p></div></div></div>
+        <div class="col-md-4"><div class=cb_spl><span class=spl_mtp></span></div><h2 class=cb_color_1>MultiPlay</h2><div class="row"><div class="col-xs-12"><p class="lead">Place Mars in different areas of your home to create a seamless wireless audio and an amazing surround experience.</p></div></div></div>
+        <div class="col-md-4"><div class=cb_spl><span class=spl_atv></span></div><h2 class=cb_color_1>AutoVolume</h2><div class="row"><div class="col-xs-12"><p class="lead">Mars will adjust sound volume automatically according to your distance to the speaker. Just forget about volume control and enjoy the immersive music experiences.</p></div></div></div>
         <div class="col-md-3"></div></div>
         
         </div>
@@ -410,7 +447,7 @@
       
         <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-7"><h1 style="font-family:Microsoft YaHei,\5FAE\8F6F\96C5\9ED1;">CSR aptX™ 授权</h1></div>
+        <div class="col-md-7"><h1>Powered by aptX</h1></div>
         <div class="col-md-2"></div></div>
         
         <div class="dv_1 hidden-xs"></div>
@@ -419,14 +456,14 @@
         <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-7">
-        <p class="lead"></p></div>
+        <p class="lead"><strong>aptX® solution for CD quality from the air.</strong><br>Mars equips CSR's world renowned aptX® audio compression solutions retain the full integrity of original digital audio and are optimised for instant real-time audio streaming. The suite of algorithms has earned a reputation for some of the highest audio quality, extremely low latency and strong resilience to bit errors.</p></div>
         <div class="col-md-1"></div>
         <div class="col-md-2">
            <div class=cb_side_wrap>
            <div class=cb_dvl_1></div>
-           <p class="lead cb_lead_s">CD 品质</p>
+           <p class="lead cb_lead_s">CD quality</p>
            <div class=cb_spl><span class=spl_apx></span></div>
-           <p class="lead cb_lead_s">aptX® 音效</p>
+           <p class="lead cb_lead_s">Powered by aptX®</p>
            </div>
          </div></div></div>
 
@@ -442,7 +479,7 @@
       
         <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-7"><h1 style="font-family:Microsoft YaHei,\5FAE\8F6F\96C5\9ED1;">自动充电</h1></div>
+        <div class="col-md-7"><h1>Wireless charging</h1></div>
         <div class="col-md-2"></div></div>
         
         <div class="dv_1 hidden-xs"></div>
@@ -451,14 +488,14 @@
         <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-7">
-        <p class="lead">Mars悬浮体没有任何充电接口，电量不够时，悬浮体将自动预警，并缓缓降落到低音炮上自动充电。</p></div>
+        <p class="lead"><strong>Magic experiences that you never imagine before.</strong><br>You may find there is no such port for charging or other inputs on Mars. We have removed all these unnecessary elements that allow you pay less attention other than music. By using wireless charging, Mars will land under low power, and take off when fully recharged. All these magic moments happened quietly and smoothly.</p></div>
         <div class="col-md-1"></div>
         <div class="col-md-2">
            <div class=cb_side_wrap>
            <div class=cb_dvl_1></div>
-           <p class="lead cb_lead_s">自动充电</p>
+           <p class="lead cb_lead_s">AutoCharge</p>
            <div class=cb_spl><span class=spl_atc></span></div>
-           <p class="lead cb_lead_s">无线解决方案</p>
+           <p class="lead cb_lead_s">Wireless charging solution</p>
            </div>
          </div></div></div>
 
@@ -474,23 +511,23 @@
       
         <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-7"><h1 style="font-family:Microsoft YaHei,\5FAE\8F6F\96C5\9ED1;">7级防水，伴你泳池畅游。</h1></div>
+        <div class="col-md-7"><h1>Waterproof. IPX7</h1></div>
         <div class="col-md-2"></div></div>
         
         <div class="dv_1 hidden-xs"></div>
-        
+        <div class="dv_22 hidden-sm"></div>
         
         <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-7">
-        <p class="lead"></p></div>
+        <p class="lead"><strong>Waterproof and dustproof.</strong><br>Mars is waterproof to IPX7 standard. Mars is diving safe 3 feet under the water. It is dustproof, so neither beach nor desert will damage it. Mars is always on duty in any tough condition.</p></div>
         <div class="col-md-1"></div>
         <div class="col-md-2">
            <div class=cb_side_wrap>
            <div class=cb_dvl_1></div>
            <p class="lead cb_lead_s">IPX 7</p>
            <div class=cb_spl><span class=spl_ipx></span></div>
-           <p class="lead cb_lead_s">防水防尘</p>
+           <p class="lead cb_lead_s">Waterproof and dustproof</p>
            </div>
          </div></div></div>
 
@@ -505,7 +542,7 @@
   <div class="col-xs-12 col-md-6 col-lg-6"><img class="img-responsive" src="imgs/s2.jpg"/></div><div class="dv_20 hidden-md hidden-lg"></div><div class="col-xs-12 col-md-6 col-lg-6"><img class="img-responsive" src="imgs/s5.jpg"/></div></div>
 
   <div class="dv_20"></div>
-        
+  
   <div class="cb_pic"><img class="img-responsive" src="imgs/s12.jpg"/></div>
     
     <div class="container" id=jp2 >
@@ -514,7 +551,7 @@
       
         <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-7"><h1 style="font-family:Microsoft YaHei,\5FAE\8F6F\96C5\9ED1;">技术规格</h1></div>
+        <div class="col-md-7"><h1>Technical Specifications</h1></div>
         <div class="col-md-2"></div></div>
         
         <div class="dv_1 hidden-xs"></div>
@@ -524,22 +561,21 @@
         <div class="col-md-1"></div>
         <div class="col-md-3">
         <p class="lead" style="font-size:14px;">
-        <strong>悬浮体尺寸</strong><br>直径: 120mm<br>高度: 40mm<br><br>
-        <strong>低音炮尺寸</strong><br>直径: 132mm<br>高度: 200mm<br><br>
-        <strong>总重量</strong><br>720g<br><br>
-        <strong>扬声器</strong><br>1.75 英寸钕铁硼全频扬声器<br/>带无源辐射器<br>4.5 英寸低音炮<br><br>
-        <strong>声音</strong><br>360度环绕声<br>系统建立<br>AptX 解码器<br>AAC 解码支持器<br>内置麦克风<br><br>
-        <strong>连接件</strong><br>低能耗蓝牙4.0<br>NFC<br><br>
-        <strong>磁悬浮</strong><br>悬浮高度: 30mm<br>Gravitron®悬浮系统<br><br>
-         <strong>电池电量</strong><br>8小时持续播放<br>内置可充电锂电池(3.7V, 10,000毫安时)<br>USB: 5V, 1.0A<br>自动充电</p></div>
+        <strong>Size Mars Object</strong><br>Diameter: 4.7” (120mm)<br>Height: 1.6” (40mm)<br><br>
+        <strong>Size Mars Base</strong><br>Diameter: 5.2” (132mm)<br>Height: 7.9” (200mm)<br><br>
+        <strong>Weight</strong><br>1.58	lb (720g)<br><br>
+        <strong>Speaker</strong><br>1 3/4" neo-dynamic full range speaker driver with passive radiator<br>4 1/2" neo-dynamic Subwoofer<br><br>
+        <strong>Audio</strong><br>360 Sound<br>System Setup<br>AptX Codec (CD quality over Bluetooth)<br>AAC Codec Support<br>Built-in Microphone<br><br>
+        <strong>Connections</strong><br>Bluetooth 4.0 Low Energy<br>NFC<br><br>
+        <strong>Magnetic Levitation</strong><br>1.3” floating height<br>Gravitron Levitation System<br><br>
+         <strong>Power and Battery</strong><br>8+ hours of continuous playback<br>Built-in rechargeable Lithium-Polymer battery (3.7V, 10,000mAh). <br>USB Rating: 5V, 1.0A<br>QI Wireless Charging on launch deck.<br>AutoCharging</p></div>
         <div class="col-md-1"></div>
         <div class="col-md-3">
         <p class="lead" style="font-size:14px;">
-        <strong>App 参数</strong><br>iOS 7以上<br>自动音量<br>环绕音效<br>智能电量预警<br>自动播放<br>支持配对<br><br>
-        <strong>蓝牙参数</strong><br>低能耗蓝牙4.0<br>覆盖范围：30m<br>支持EDR<br>蓝牙传输频率范围: 2.402GHz~2.480GHz <br>支持 HFP 1.6, A2DP 1.2, AVRCP 1.4, HSP 1.2, SPP<br>蓝牙发射功率: 0~4dBm <br>蓝牙传输制式: GFSK, 8DPSK, π/4DQPSK<br><br>
-        <strong>防水级别</strong><br>IPX 7<br><br>
-        
-        <strong>包装内容</strong><br>Mars悬浮体<br>Mars低音炮基座<br>电源适配器<br>使用说明</p></div>
+        <strong>App Features</strong><br>iOS 7 or above<br>AutoVolume<br>MultiPlay<br>Smart Alarm<br>AutoPlay<br>DoubleUp<br><br>
+        <strong>Bluetooth Specs</strong><br>Bluetooth 4.0 Low Energy<br>Range up to 100 feet (30m) <br>Supports Enhanced Data Rate (EDR)<br>Bluetooth transmitter frequency range: 2.402GHz~2.480GHz <br>Supports HFP 1.6, A2DP 1.2, AVRCP 1.4, HSP 1.2, SPP<br>Bluetooth transmitter power: 0~4dBm <br>Bluetooth transmitter modulation: GFSK, 8DPSK, π/4DQPSK <br><br>
+        <strong>Waterproof</strong><br>IPX 7<br><br>
+        <strong>Package Contents</strong><br>Mars Object<br>Mars Base with Subwoofer<br>Power Adapter<br>Quick Start Guide</p></div>
         <div class="col-md-1"></div></div></div>
 
     </div><!-- /.container -->
@@ -547,18 +583,18 @@
     <div class="dv_100 hidden-xs"></div>
     <div class="dv_36" style="border-bottom:#222 1px solid;"></div>
  
- <div class="dv_20"></div>
+    <div class="dv_20"></div>
     
 <div class="container">
   <div class="starter-template">
       
     <div class="row">
         <div class="col-xs-hidden col-md-1"></div>
-        <div class="col-xs-12 col-md-4"><h3>Stay tuned. <i style="font-family:Microsoft YaHei,\5FAE\8F6F\96C5\9ED1;">订阅我们的讯息</i></h3></div>
+        <div class="col-xs-12 col-md-4"><h3>Stay tuned. <i>Sign up for our newsletter.</i></h3></div>
         <div class="col-xs-12 col-md-6">
            <div class="row">
            <div class="col-xs-9" style="padding:0;"><div class="cb_merge_var"><input size="18" placeholder="Your email" class="cb_input" id="email" name="email" type="text"></div><!-- /cb_merge_var -->
-           <div class="cb_ty" id="msgDiv" style="display:none">感谢您的订阅。</div>
+           <div class="cb_ty" id="msgDiv" style="display:none">Thank you, you've been signed up!</div>
            </div>
            <div class="col-xs-3" style="padding:0;"><div class="cb_signup_submit" id="submitBtn">
 			<input value="Send" type="submit">
@@ -583,12 +619,12 @@
   <img src="imgs/logo_ft.png" alt="crazybaby"/>
   <div class=dv_36></div>
   <div class=cb_line>
-    <p class="cbp">© 2014 Crazybaby. 保留所有权利。</p>
+    <p class="cbp">© 2014 Crazybaby. All rights reserved. </p>
     	<ul class="piped">
-		    <li><a href="legal.html?p=1" class=first>使用条款</a></li>
-		    <li><a href="legal.html?p=2">隐私政策</a></li>
+		    <li><a href="legal.html?p=1" class=first>Terms of Use</a></li>
+		    <li><a href="legal.html?p=2">Privacy Policy</a></li>
       <li><a href="mailto:service@crazybaby.com">Email</a></li>
-      <li><a href="../imgs/press_kit.zip">媒体资料</a></li></ul></div>
+      <li><a href="imgs/press_kit.zip">Press Kit</a></li></ul></div>
   <div class=dv_55></div>
   <div style="display:none">
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253435723'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s6.cnzz.com/z_stat.php%3Fid%3D1253435723%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -616,16 +652,15 @@
 		
 		$('#nav_mars_2').scrollToFixed();
 });
-				</script>
-    
+		</script>
     <script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-			 ga('create', 'UA-55901630-1', 'auto');
-			 ga('send', 'pageview');
+		 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		 ga('create', 'UA-55901630-1', 'auto');
+		 ga('send', 'pageview');
 
 		</script>
 
