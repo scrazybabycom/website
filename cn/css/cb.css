@@ -116,6 +116,7 @@ ul.piped li a.first {border:none;}
 	font-size: 18px; background-color:#000;
 	margin-top:6px;
 	background:url(../imgs/logo.svg) no-repeat 0;
+	background:url(../imgs/logo.png \9) no-repeat 0;
 }
 .navbar-brand:hover, .navbar-brand:focus {
 	text-decoration: none
