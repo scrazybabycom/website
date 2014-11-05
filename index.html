@@ -65,16 +65,14 @@ h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font
 				}
 		
 			}
-		   
-			document.onload=areaCheck();
-			
+		  
 			$(document).ready(function() {
 
-				$("#submitBtn").click(function(){
+				$("#submitBtn1").click(function(){
 					
-					var email = $("#email").val();
+					var email = $("#email1").val();
 					
-					var msgDiv = document.getElementById("msgDiv");
+					var msgDiv = document.getElementById("msgDiv1");
               		
 					if(email==""){
 						msgDiv.innerHTML = "Email is empty.";
@@ -96,16 +94,70 @@ h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font
 			  	
 			
 			  });
-  
+			  
+			  
+  			$("#submitBtn2").click(function(){
+					
+					var email = $("#email2").val();
+					
+					var msgDiv = document.getElementById("msgDiv2");
+              		
+					if(email==""){
+						msgDiv.innerHTML = "Email is empty.";
+						msgDiv.style.display = "";
+						return false;
+					}
+					
+					$.getJSON("http://news.crazybaby.com/user.subscription.htm?email="+email+"&jsoncallback=?",
+				      function(json){
+				      	
+					      if(json.msg=="1"){
+	            		msgDiv.innerHTML = "Thank you, you've been signed up!";
+	            		msgDiv.style.display = "";
+	            	}else{
+	            		msgDiv.innerHTML = "Email is not correct.";
+	            		msgDiv.style.display = "";
+	            	}
+					  	});
+			  	
+			
+			  });
 				
 			});
 			
+			 
+			document.onload=areaCheck();
 			
 		</script>
   </head>
 
   <body>
   
+  <div class="container">
+  <div class="starter-template">
+      
+    <div class="row">
+        <div class="col-xs-hidden col-md-1"></div>
+        <div class="col-xs-12 col-md-4"><h3>Stay tuned. <i>Sign up for our newsletter.</i></h3></div>
+        <div class="col-xs-12 col-md-6">
+           <div class="row">
+           <div class="col-xs-9" style="padding:0;"><div class="cb_merge_var"><input size="18" placeholder="Your email" class="cb_input" id="email1" name="email" type="text"></div><!-- /cb_merge_var -->
+           <div class="cb_ty" id="msgDiv1" style="display:none">Thank you, you've been signed up!</div>
+           </div>
+           <div class="col-xs-3" style="padding:0;"><div class="cb_signup_submit" id="submitBtn1">
+			<input value="Send" type="submit">
+		</div><!-- /cb_signup_submit --></div></div>
+
+</div>
+        </div>
+        
+        <div class="dv_14"></div>
+        
+  </div>
+        
+    </div><!-- /.container -->
+    
+    
   <div style="float:none; position:absolute; left:0; right:0; background:#2c2c2c; ">
   <div class="container" style="padding:0;">
   
@@ -577,10 +629,10 @@ Deep bass. a 4.5-inch subwoofer and 10,000mAH powerbank inside base underneath.
         <div class="col-xs-12 col-md-4"><h3>Stay tuned. <i>Sign up for our newsletter.</i></h3></div>
         <div class="col-xs-12 col-md-6">
            <div class="row">
-           <div class="col-xs-9" style="padding:0;"><div class="cb_merge_var"><input size="18" placeholder="Your email" class="cb_input" id="email" name="email" type="text"></div><!-- /cb_merge_var -->
-           <div class="cb_ty" id="msgDiv" style="display:none">Thank you, you've been signed up!</div>
+           <div class="col-xs-9" style="padding:0;"><div class="cb_merge_var"><input size="18" placeholder="Your email" class="cb_input" id="email2" name="email" type="text"></div><!-- /cb_merge_var -->
+           <div class="cb_ty" id="msgDiv2" style="display:none">Thank you, you've been signed up!</div>
            </div>
-           <div class="col-xs-3" style="padding:0;"><div class="cb_signup_submit" id="submitBtn">
+           <div class="col-xs-3" style="padding:0;"><div class="cb_signup_submit" id="submitBtn2">
 			<input value="Send" type="submit">
 		</div><!-- /cb_signup_submit --></div></div>
 
