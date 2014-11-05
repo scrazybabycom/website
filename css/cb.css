@@ -116,6 +116,7 @@ ul.piped li a.first {border:none;}
 	font-size: 18px; background-color:#000;
 	margin-top:6px;
 	background:url(../imgs/logo.svg) no-repeat 0;
+	background:url(../imgs/logo.png) no-repeat 0 \9;
 }
 .navbar-brand:hover, .navbar-brand:focus {
 	text-decoration: none
@@ -317,7 +318,10 @@ line-height:13px;
 
 .cb_nav {position:relative; clear:both; float:left;  margin:0; padding:0px; width:100%; height:auto;  text-align:center; top:0px; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-weight:normal; font-size:12px; border-bottom:#363532 1px solid; border-left:none;}
 .cb_nav_brand {float:left; display:inline-block; width:100px; height:32px; margin-left:1px;}
-.xt_mars {background:url(../imgs/xt_mars.svg) no-repeat 0 0;}
+.xt_mars {
+	background:url(../imgs/xt_mars.svg) no-repeat 0 0;
+	background:url(../imgs/xt_mars.png) no-repeat 0 0 \9;
+}
 .cb_nav_tab {float:right; display:inline-block; width:auto; height:47px;}
 .cb_nav_tab SPAN {position:relative; top:5px; margin-left:26px;line-height:32px;; vertical-align:text-bottom;}
 .cb_nav_tab SPAN a {color:#fff; text-decoration:none;}
