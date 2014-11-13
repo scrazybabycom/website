@@ -50,6 +50,9 @@ body {
 }
 }
 
+.hero_wrap {position:absolute; float:left;  left:0; top:0px; width:100%; height:1000px; text-align:center;}
+.hero_wrap p {clear:both; float:none; display:inline-block; margin:0 auto;}
+
 h1 {text-align:left; font-size:32px;}
 h2 {text-align:left; font-size:28px; margin-top:10px;}
 h3 {text-align:left; font-size:21px; margin-top:10px;}
@@ -86,10 +89,10 @@ h1 {
 
 .cb_line {float:none; display:inline-block; padding:0px; height:auto; margin-top:0px; margin-bottom:0px;}
 
-.cb_wrap .cbp {clear:both; display:inline-block; text-align:center;  margin:0; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-weight:normal; font-size:11px; line-height:16px; color:#e3e3e3; vertical-align:text-bottom; }
+.cb_wrap .cbp {clear:both; display:inline-block; text-align:center;  margin:0; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-weight:normal; font-size:10px; line-height:16px; color:#e3e3e3; vertical-align:text-bottom; }
 .cb_wrap .cbp a {color:#888;}
 
-ul.piped {clear:both; display:inline-block; margin:0; list-style:none; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-weight:normal; font-size:11px; line-height:16px; color:#e3e3e3; padding:0; vertical-align:text-bottom;}
+ul.piped {clear:both; display:inline-block; margin:0; list-style:none; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-weight:normal; font-size:10px; line-height:16px; color:#e3e3e3; padding:0; vertical-align:text-bottom;}
 ul.piped li {float:left; display:inline-block; text-align:center;margin-right:16px;}
 ul.piped li a {border-left:#444 1px solid; padding:0; padding-left:16px; color:#888;}
 ul.piped li a.first {border:none;}
@@ -101,7 +104,7 @@ ul.piped li a.first {border:none;}
 	border: 1px solid transparent;
 	border:none;
 }
-.navbar-header {text-align:center; background:#2c2c2c; margin:0 auto; bottom:0; top:0; padding:0; height:46px; line-height:46px;}
+.navbar-header {text-align:center; background:#000; margin:0 auto; bottom:0; top:0; padding:0; height:46px; line-height:46px;}
 @media (min-width:768px) {
 .navbar-header {
 	float: none; position:absolute; width:100%; left:0;
@@ -109,11 +112,11 @@ ul.piped li a.first {border:none;}
 }
 
 .navbar-brand {
-	float: none; display:inline-block;
+	float: left; display:inline-block; margin-left:15px;
 	width:122px;
 	height: 23px;
 	line-height:23px;
-	font-size: 18px; background-color:#000;
+	font-size: 18px;
 	margin-top:6px;
 	background:url(../imgs/logo.svg) no-repeat 0;
 	background:url(../imgs/logo.png) no-repeat 0 \9;
@@ -318,7 +321,10 @@ line-height:13px;
 
 .cb_nav {position:relative; clear:both; float:left;  margin:0; padding:0px; width:100%; height:auto;  text-align:center; top:0px; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-weight:normal; font-size:12px; border-bottom:#363532 1px solid; border-left:none;}
 .cb_nav_brand {float:left; display:inline-block; width:100px; height:32px; margin-left:1px;}
-.xt_mars {background:url(../imgs/xt_mars.svg) no-repeat 0 0;background:url(../imgs/xt_mars.png) no-repeat 0 0 \9;}
+.xt_mars {
+	background:url(../imgs/xt_mars.svg) no-repeat 0 0;
+	background:url(../imgs/xt_mars.png) no-repeat 0 0 \9;
+}
 .cb_nav_tab {float:right; display:inline-block; width:auto; height:47px;}
 .cb_nav_tab SPAN {position:relative; top:5px; margin-left:26px;line-height:32px;; vertical-align:text-bottom;}
 .cb_nav_tab SPAN a {color:#fff; text-decoration:none;}
@@ -344,4 +350,11 @@ line-height:13px;
 .cb_signup_submit input {color:#bbb; float:left;  display:inline-block; width:100%; height:32px; line-height:32px; font-size:16px; border:none; background-color:transparent; border:#333 1px solid; }
 .cb_signup_submit input:hover {background-color:#333; }
 .cb_signup_submit input:active {background-color:#3a3a3a; text-indent:-2px;}
+
+.cb_signup_submit_1 {margin-top:5px;}
+.cb_signup_submit_1 input {color:#eee; float:left;  display:inline-block; width:100%; height:32px; line-height:32px; font-size:16px; border:none; background-color:#00F; border:#00F 1px solid; }
+.cb_signup_submit_1 input:hover {background-color:#00C; }
+.cb_signup_submit_1 input:active {background-color:#00b; text-indent:-2px; border:#00b 1px solid;}
+
 .cb_ty {position:absolute; display:block; top:60px;padding:0 10px; background:#333; font-size:26px; color:#c3c3c3; }
+.cb_ty_1 {float:none; margin:0 auto; padding:0 10px; background:none; font-size:26px; color:#c3c3c3;}

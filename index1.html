@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="imgs/logo_0.ico" rel="icon" type="image/x-icon">
+		<link href="imgs/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png">
+		<link href="imgs/apple-touch-icon-ipad-precomposed.png" rel="apple-touch-icon-precomposed"sizes="72x72" type="image/png">
+		<link href="imgs/apple-touch-icon-iphone4-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+		
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Crazybaby technology">
+		<meta name="keywords" content="best wireless speakers,wifi speakers,bluetooth speakers,portable speakers,best surround sound system,best wireless speakers,levitation speakers,best wireless speakers,wifi speakers,bluetooth speakers,portable speakers">
+    <meta name="author" content="">
+    
+
+    <title>crazybaby</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/cb.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script type='text/javascript' src='http://j.maxmind.com/app/geoip.js'> </script>
+    <style type="text/css">
+
+h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font-size:34px; }
+
+		</style>
+	<script src="http://cdn.optimizely.com/js/2180282538.js"></script>
+		<script src="js/jquery.min.js"></script>
+    <script>
+			function playPause() {
+		 		
+				var myVideo = document.getElementsByTagName('video')[0];
+				var ttlDiv = document.getElementById("ttlDiv");
+				var posterDiv = document.getElementById("posterDiv");
+				var ghostDiv = document.getElementById("ghostDiv");
+				
+				if (myVideo.paused){
+				
+				 	myVideo.play();
+					ttlDiv.className = "cb_ttl hidden";
+					posterDiv.className = "cb_poster hidden";
+				}else{
+					
+		      	ttlDiv.className = "cb_ttl";
+		      	
+		     
+					
+				   myVideo.pause();
+				   
+				}
+			}
+			
+			function areaCheck(){
+				var area = geoip_country_code();
+				if(area=="CN"){
+				  window.location.href="cn/";
+				}
+		
+			}
+		  
+			$(document).ready(function() {
+
+				$("#submitBtn1").click(function(){
+					
+					var email = $("#email1").val();
+					
+					var msgDiv = document.getElementById("msgDiv1");
+              		
+					if(email==""){
+						msgDiv.innerHTML = "Email is empty.";
+						msgDiv.style.display = "";
+						return false;
+					}
+					
+					$.getJSON("http://news.crazybaby.com/user.subscription.htm?email="+email+"&jsoncallback=?",
+				      function(json){
+				      	
+					      if(json.msg=="1"){
+	            		msgDiv.innerHTML = "Thank you, you've been signed up!";
+	            		msgDiv.style.display = "";
+	            	}else{
+	            		msgDiv.innerHTML = "Email is not correct.";
+	            		msgDiv.style.display = "";
+	            	}
+					  	});
+			  	
+			
+			  });
+			  
+			  
+  			$("#submitBtn2").click(function(){
+					
+					var email = $("#email2").val();
+					
+					var msgDiv = document.getElementById("msgDiv2");
+              		
+					if(email==""){
+						msgDiv.innerHTML = "Email is empty.";
+						msgDiv.style.display = "";
+						return false;
+					}
+					
+					$.getJSON("http://news.crazybaby.com/user.subscription.htm?email="+email+"&jsoncallback=?",
+				      function(json){
+				      	
+					      if(json.msg=="1"){
+	            		msgDiv.innerHTML = "Thank you, you've been signed up!";
+	            		msgDiv.style.display = "";
+	            	}else{
+	            		msgDiv.innerHTML = "Email is not correct.";
+	            		msgDiv.style.display = "";
+	            	}
+					  	});
+			  	
+			
+			  });
+				
+			});
+			
+			 
+			document.onload=areaCheck();
+			
+		</script>
+  </head>
+
+  <body>
+  
+  <div style="float:none; position:absolute; left:0; right:0; background:#2c2c2c; ">
+  <div class="container" style="padding:0;">
+  
+  <nav class="navbar navbar-default cb_navbar" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://crazybaby.com"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="border:none; background:#333;">
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li class=bt_ks_1><a class="cb_bt bt_fb" href="https://www.facebook.com/pages/Crazybaby/283206838547558?sk=timeline">Follow us on Facebook</a></li>
+        <li class=bt_ks_1><a class="cb_bt bt_tw" href="https://twitter.com/crazybabyaudio">Follow us on Twitter</a></li>
+        
+      </ul>
+   <!--   
+      <ul class="nav navbar-nav navbar-right" style="padding-bottom:12px;">
+        <li class=bt_ks><a class="cb_bt_1" href="#">Support on Kickstarter</a></li>
+      </ul>-->
+    
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</div>
+</div>
+
+<div class=dv_41></div>
+
+<div class="cb_wrap hidden-xs" id=nav_mars>
+<h1></h1>
+<div class=container>
+<div class="cb_nav" id=nav_mars_1>
+  <div class="cb_nav_brand xt_mars"></div>
+  <div class=cb_nav_tab>
+    <span><a href="#" title="best wireless speaker" rel="tag">Overview</a></span>
+		<span><a href="#jp1" title="home sound system, best sound system" rel="tag">Sound</a></span>
+		<span><a href="#jp2" title="wireless audio" rel="tag">Tech Specs</a></span>
+		<span><a class=cb_disabled href="#"title="kickstarter,crowdfund" rel="tag">Crowdfunding soon</a></span></div>
+</div>
+</div>
+</div>
+
+
+<div class="cb_nav hidden-sm hidden-md hidden-lg"  id=nav_mars_2>
+  <div class="cb_nav_brand xt_mars"></div>
+  <div class=cb_nav_tab>
+  <span class=tab_support><a class=cb_disabled href="#" title="kickstarter,crowdfund" rel="tag">Crowdfunding soon</a></span></div>
+</div>
+
+<div class=dv_41></div>
+
+<div class="dv_41 hidden-xs"></div>
+   
+    <div class="cb_hero hidden-xs" style="clear:both; margin-top:40px;">
+<a style="position:absolute; margin:0; padding:0; top:0; bottom:0; left:0; right:0; z-index:400;" href="#" ></a>
+
+     <div class=play_show>
+     <video src="" preload="auto" width="100%;" data-setup="{}"; clear:both; margin:0; padding:0;">your browser does not support the video tag
+<source src="" type="video/mp4">
+       </video>
+       
+     <div id="ttlDiv" class=cb_ttl>
+     <div class="dv_100 hidden-xs hidden-md hidden-lg"></div><div class="dv_60 hidden-xs hidden-md hidden-lg"></div>
+    <div class="dv_100 hidden-xs hidden-sm hidden-lg"></div><div class="dv_100 hidden-xs hidden-sm hidden-lg"></div>
+     <div class="dv_300 hidden-xs hidden-sm hidden-md"></div>
+     <span><img class="img-responsive hidden-xs" src="imgs/play_mars_1.png"/></span></div>
+     
+     <div id="posterDiv" class="cb_poster">
+       <div class="dv_50 hidden-xs hidden-sm hidden-md"></div>
+       <div class="dv_10 hidden-xs hidden-md hidden-lg"></div>
+     <img class="img-responsive hidden-xs hidden-sm hidden-md" src="imgs/hero_1.jpg" width="360"/>
+     <img class="img-responsive hidden-xs hidden-sm hidden-lg" src="imgs/hero_1.jpg" width="290"/>
+     <img class="img-responsive hidden-xs hidden-md hidden-lg" src="imgs/hero_1.jpg" width="260"/>
+     </div>
+     </div>
+     </div>
+     
+     
+     <div class="cb_hero hidden-sm hidden-md hidden-lg">
+      <div class=play_show>
+       <!--video src="" preload="auto" width="100%;" controls data-setup="{}">your browser does not support the video tag
+<source src="" type="video/mp4"-->
+       </video></div>
+     </div>
+     
+     
+     <div class="cb_poster hidden-sm hidden-md hidden-lg" style="position:relative; padding-top:50px;">
+     <div class="dv_50 hidden-xs"></div>
+     <img class="img-responsive" src="imgs/hero_1.jpg" width="360" style="padding:0 50px;"/>
+     <div class=cb_ttl><span><div class="dv_100 hidden-sm hidden-md hidden-lg"></div><div class="dv_100 hidden-sm hidden-md hidden-lg"></div><div class="dv_20 hidden-sm hidden-md hidden-lg"></div><img class="img-responsive" src="imgs/ttl_mars_xs.png"/></span></div>
+     
+     </div>
+
+
+
+     
+      <div class=cb_ppp><span><br><br><img class="img-responsive hidden-xs" src="imgs/ppp_mars.png"/><img class="img-responsive hidden-sm hidden-md hidden-lg" src="imgs/ppp_mars_xs.png"/></span></div>
+
+
+<div class="dv_36" style="border-bottom:#222 1px solid;"></div>
+
+<div class="dv_20"></div>
+
+  <div class="container">
+  <div class="starter-template">
+      
+    <div class="row">
+        <div class="col-xs-hidden col-md-1"></div>
+        <div class="col-xs-12 col-md-4"><h3>Stay tuned. <i>Sign up for our newsletter.</i></h3></div>
+        <div class="col-xs-12 col-md-6">
+           <div class="row">
+           <div class="col-xs-9" style="padding:0;"><div class="cb_merge_var"><input size="18" placeholder="Your email" class="cb_input" id="email1" name="email" type="text"></div><!-- /cb_merge_var -->
+           <div class="cb_ty" id="msgDiv1" style="display:none">Thank you, you've been signed up!</div>
+           </div>
+           <div class="col-xs-3" style="padding:0;"><div class="cb_signup_submit" id="submitBtn1">
+			<input value="Send" type="submit">
+		</div><!-- /cb_signup_submit --></div></div>
+
+</div>
+        </div>
+        
+  </div>
+        
+    </div><!-- /.container -->
+    
+    
+    
+    <div class="dv_14"></div>
+    <div class="dv_36"></div>
+    
+    <div class="cb_pic"><img class="img-responsive" src="imgs/s8.jpg"/></div>
+     
+    <div class="container">
+
+      <div class="starter-template">
+      
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7"><h1>Levitate with serious sound system.</h1></div>
+        <div class="col-md-2"></div></div>
+        
+        <div class="dv_1 hidden-xs"></div>
+        <div class="dv_22 hidden-sm"></div>
+        
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+        <p class="lead">
+        	Mars is a new hub for music that fuses sci-fi design with precise, thoughtful engineering. The acoustic system with subwoofer amplifies any soundtrack, which promising to powerful and incredible sound.
+				</p></div>
+        <div class="col-md-2"></div></div></div>
+
+    </div><!-- /.container -->
+    
+    
+    <div class="dv_100 hidden-xs"></div>
+    <div class="dv_36 hidden-sm"></div>
+    <div class="cb_pic"><img class="img-responsive" src="imgs/s16.jpg"/></div>
+     
+    <div class="container">
+
+      <div class="starter-template">
+      
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7"><h1>Design in a Glance</h1></div>
+        <div class="col-md-2"></div></div>
+        
+        <div class="dv_1 hidden-xs"></div>
+        <div class="dv_22 hidden-sm"></div>
+        
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+        <p class="lead"><strong>Precisely engineered. Just 4cm thin.</strong><br>The outcome is a thinnest and compact design, just like a piece of art.</p><br><br><br><br><br><br></div>
+        <div class="col-md-2"></div></div>
+        <img class="img-responsive" src="imgs/s19.jpg"/>
+        </div>
+
+    </div><!-- /.container -->    
+    
+    <div class="dv_100 hidden-xs"></div>
+    <div class="dv_36 hidden-sm"></div>
+    <div class="cb_pic"><img class="img-responsive" src="imgs/s3.jpg"/></div>
+     
+    <div class="container">
+
+      <div class="starter-template">
+      
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7"><h1>Portable Hi-Fi system.</h1></div>
+        <div class="col-md-2"></div></div>
+        
+        <div class="dv_1 hidden-xs"></div>
+        <div class="dv_22 hidden-sm"></div>
+        
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+        <p class="lead">Mars packed with a 1.75 inch full-range speaker and a passive radiator in floating object. CSR AptX . 
+Deep bass. a 4.5-inch subwoofer and 10,000mAH powerbank inside base underneath.
+</p></div>
+        <div class="col-md-2"></div></div></div>
+
+    </div><!-- /.container -->    
+    
+    <div class="dv_100 hidden-xs"></div>
+    <div class="dv_36 hidden-sm"></div>
+    <div class="cb_pic"><img class="img-responsive" src="imgs/s131.jpg"/></div>
+     
+    <div class="container">
+
+      <div class="starter-template">
+      
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7"><h1>Aeronautical aluminum.</h1></div>
+        <div class="col-md-2"></div></div>
+        
+        <div class="dv_1 hidden-xs"></div>
+        <div class="dv_22 hidden-sm"></div>
+        
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+        <p class="lead">Mars not only looks cool and elegant, but also super durable and safe to fly with.</p></div>
+         <div class="col-md-1"></div>
+        <div class="col-md-2">
+           <div class=cb_side_wrap>
+           <div class=cb_dvl_1></div>
+           <p class="lead cb_lead_s">Craft by</p>
+           <div class=cb_spl><span class=spl_alu></span></div>
+           <p class="lead cb_lead_s">Machined<br>aeronautical aluminum</p>
+           </div>
+         </div></div></div>
+
+    </div><!-- /.container -->   
+    
+     <div class="dv_100 hidden-xs"></div>
+    <div class="dv_36 hidden-sm"></div>
+    <div class="cb_pic"><img class="img-responsive" src="imgs/s6.jpg"/></div>
+     
+    <div class="container">
+
+      <div class="starter-template">
+      
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7"><h1>Gravitron levitation.</h1></div>
+        <div class="col-md-2"></div></div>
+        
+        <div class="dv_1 hidden-xs"></div>
+        <div class="dv_22 hidden-sm"></div>
+        
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+        <p class="lead">Gravitron® is the best leveitation system in the world.</p></div>
+         <div class="col-md-1"></div>
+        <div class="col-md-2">
+           <div class=cb_side_wrap>
+           <div class=cb_dvl_1></div>
+           <p class="lead cb_lead_s">Levitate with</p>
+           <div class=cb_spl><span class=spl_grv></span></div>
+           <p class="lead cb_lead_s">Gravitron technology</p>
+           </div>
+         </div></div></div>
+
+    </div><!-- /.container -->    
+    
+    <div class="dv_100 hidden-xs"></div>
+    <div class="dv_36 hidden-sm"></div>
+    <div class="cb_pic"><img class="img-responsive" src="imgs/s4.jpg"/></div>
+     
+    
+    
+    <div class="dv_55 hidden-xs"></div>
+    <div class="dv_36 hidden-sm"></div>
+    <div class=cb_wrap_1><img class="img-responsive" src="imgs/s111.jpg"/></div>
+    
+    <div class="dv_20"></div>
+     
+    <div class="container">
+
+      <div class="starter-template">
+      
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7"><h1>Incredible Sound (Frequency range)</h1></div>
+        <div class="col-md-2"></div></div>
+        
+        <div class="dv_1 hidden-xs"></div>
+        <div class="dv_22 hidden-sm"></div>
+        
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+        <p class="lead">Mars deliver a high-fidelity and incredible sound, 360 degree sound design.<br><br><br><br><!--img class="img-responsive" src="imgs/freqrange_1.png"/--></p></div>
+        <div class="col-md-2"></div></div></div>
+
+    </div><!-- /.container -->    
+    
+    <div class="dv_100 hidden-xs"></div>
+    <div class="dv_36 hidden-sm"></div>
+    <div class="cb_pic"><img class="img-responsive" src="imgs/s1.jpg"/></div>
+     
+    <div class="container">
+
+      <div class="starter-template">
+      
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4"><div class=cb_spl><span class=spl_ble></span></div><h2 class=cb_color_1>Bluetooth 4.0</h2><div class="row"><div class="col-xs-12"><p class="lead"></p></div></div></div>
+        <div class="col-md-4"><div class=cb_spl><span class=spl_dbp></span></div><h2 class=cb_color_1>Double Up</h2><div class="row"><div class="col-xs-12"><p class="lead"></p></div></div></div>
+        <div class="col-md-3"></div></div>
+        
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4"><div class=cb_spl><span class=spl_mtp></span></div><h2 class=cb_color_1>MultiPlay</h2><div class="row"><div class="col-xs-12"><p class="lead"></p></div></div></div>
+        <div class="col-md-4"><div class=cb_spl><span class=spl_atv></span></div><h2 class=cb_color_1>AutoVolume</h2><div class="row"><div class="col-xs-12"><p class="lead"></p></div></div></div>
+        <div class="col-md-3"></div></div>
+        
+        </div>
+
+    </div><!-- /.container -->    
+    
+    <div class="dv_100 hidden-xs"></div>
+    <div class="dv_36 hidden-sm"></div>
+    <div class="cb_pic"><img class="img-responsive" src="imgs/s172.jpg" width="100%;"/></div>
+       
+    <div class="container">
+
+      <div class="starter-template">
+      
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7"><h1>Powered by aptX</h1></div>
+        <div class="col-md-2"></div></div>
+        
+        <div class="dv_1 hidden-xs"></div>
+        <div class="dv_22 hidden-sm"></div>
+        
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+        <p class="lead"></p></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+           <div class=cb_side_wrap>
+           <div class=cb_dvl_1></div>
+           <p class="lead cb_lead_s">CD quality</p>
+           <div class=cb_spl><span class=spl_apx></span></div>
+           <p class="lead cb_lead_s">Powered by aptX®</p>
+           </div>
+         </div></div></div>
+
+    </div><!-- /.container --> 
+    
+    <div class="dv_100 hidden-xs"></div>
+    <div class="dv_36 hidden-sm"></div>
+    <div class="cb_pic"><img class="img-responsive" src="imgs/s151.jpg"/></div>
+     
+    <div class="container">
+
+      <div class="starter-template">
+      
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7"><h1>Auto charging</h1></div>
+        <div class="col-md-2"></div></div>
+        
+        <div class="dv_1 hidden-xs"></div>
+        <div class="dv_22 hidden-sm"></div>
+        
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+        <p class="lead">NO charging port.Mars will land under low power, and take off when fully recharged.</p></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+           <div class=cb_side_wrap>
+           <div class=cb_dvl_1></div>
+           <p class="lead cb_lead_s">AutoCharge</p>
+           <div class=cb_spl><span class=spl_atc></span></div>
+           <p class="lead cb_lead_s">Wireless charging solution</p>
+           </div>
+         </div></div></div>
+
+    </div><!-- /.container -->    
+    
+    <div class="dv_100 hidden-xs"></div>
+    <div class="dv_36 hidden-sm"></div>
+    <div class="cb_pic"><img class="img-responsive" src="imgs/s18.jpg" width="100%"/></div>
+     
+    <div class="container">
+
+      <div class="starter-template">
+      
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7"><h1>Diving safe, and swim with you.</h1></div>
+        <div class="col-md-2"></div></div>
+        
+        <div class="dv_1 hidden-xs"></div>
+        <div class="dv_22 hidden-sm"></div>
+        
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+        <p class="lead"></p></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+           <div class=cb_side_wrap>
+           <div class=cb_dvl_1></div>
+           <p class="lead cb_lead_s">Waterproof</p>
+           <div class=cb_spl><span class=spl_ipx></span></div>
+           <p class="lead cb_lead_s">Dustproof</p>
+           </div>
+         </div></div></div>
+
+    </div><!-- /.container -->    
+    
+    <div class="dv_100 hidden-xs"></div>
+    <div class="dv_36 hidden-sm"></div>
+     <div class="row hidden-lg" style="margin-right:0px;">
+  <div class="col-xs-12 col-md-6 col-lg-6" style="padding:0;"><img class="img-responsive" src="imgs/s2.jpg"/></div><div class="dv_20 hidden-md hidden-lg"></div><div class="col-xs-12 col-md-6 col-lg-6" style="padding:0;"><img class="img-responsive" src="imgs/s5.jpg"/></div></div>
+  
+  <div class="row hidden-xs hidden-sm hidden-md" style="margin-right:0px;">
+  <div class="col-xs-12 col-md-6 col-lg-6"><img class="img-responsive" src="imgs/s2.jpg"/></div><div class="dv_20 hidden-md hidden-lg"></div><div class="col-xs-12 col-md-6 col-lg-6"><img class="img-responsive" src="imgs/s5.jpg"/></div></div>
+
+  <div class="dv_20"></div>
+  
+  <div class="cb_pic"><img class="img-responsive" src="imgs/s12.jpg"/></div>
+    
+    <div class="container" id=jp2 >
+
+      <div class="starter-template" >
+      
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7"><h1>Technical Specifications</h1></div>
+        <div class="col-md-2"></div></div>
+        
+        <div class="dv_1 hidden-xs"></div>
+        <div class="dv_22 hidden-sm"></div>
+        
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+        <p class="lead" style="font-size:14px;">
+        <strong>Size Mars Object</strong><br>Diameter: 4.7” (120mm)<br>Height: 1.6” (40mm)<br><br>
+        <strong>Size Mars Base</strong><br>Diameter: 5.2” (132mm)<br>Height: 7.9” (200mm)<br><br>
+        <strong>Weight</strong><br>1.58	lb (720g)<br><br>
+        <strong>Speaker</strong><br>1 3/4" neo-dynamic full range speaker driver with passive radiator<br>4 1/2" neo-dynamic Subwoofer<br><br>
+        <strong>Audio</strong><br>360 Sound<br>System Setup<br>AptX Codec (CD quality over Bluetooth)<br>AAC Codec Support<br>Built-in Microphone<br><br>
+        <strong>Connections</strong><br>Bluetooth 4.0 Low Energy<br><br>
+        <strong>Magnetic Levitation</strong><br>1.3” floating height<br>Gravitron Levitation System<br><br>
+         <strong>Power and Battery</strong><br>24 hours of continuous playback<br>Built-in rechargeable Lithium-Polymer battery (3.7V, 10,000mAh). <br>USB Rating: 5V, 1.0A<br>QI Wireless Charging on launch deck.<br>AutoCharging</p></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+        <p class="lead" style="font-size:14px;">
+        <strong>App Features</strong><br>iOS 7 or above<br>AutoVolume<br>MultiPlay<br>Smart Alarm<br>AutoPlay<br>DoubleUp<br><br>
+        <strong>Bluetooth Specs</strong><br>Bluetooth 4.0 Low Energy<br>Range up to 100 feet (30m) <br>Supports Enhanced Data Rate (EDR)<br>Bluetooth transmitter frequency range: 2.402GHz~2.480GHz <br>Supports HFP 1.6, A2DP 1.2, AVRCP 1.4, HSP 1.2, SPP<br>Bluetooth transmitter power: 0~4dBm <br>Bluetooth transmitter modulation: GFSK, 8DPSK, π/4DQPSK <br><br>
+        <strong>Waterproof</strong><br><br>
+        <strong>Package Contents</strong><br>Mars Object<br>Mars Base with Subwoofer<br>Power Adapter<br>Quick Start Guide</p></div>
+        <div class="col-md-1"></div></div></div>
+
+    </div><!-- /.container -->
+    
+    <div class="dv_100 hidden-xs"></div>
+    <div class="dv_36" style="border-bottom:#222 1px solid;"></div>
+ 
+    <div class="dv_20"></div>
+    
+<div class="container">
+  <div class="starter-template">
+      
+    <div class="row">
+        <div class="col-xs-hidden col-md-1"></div>
+        <div class="col-xs-12 col-md-4"><h3>Stay tuned. <i>Sign up for our newsletter.</i></h3></div>
+        <div class="col-xs-12 col-md-6">
+           <div class="row">
+           <div class="col-xs-9" style="padding:0;"><div class="cb_merge_var"><input size="18" placeholder="Your email" class="cb_input" id="email2" name="email" type="text"></div><!-- /cb_merge_var -->
+           <div class="cb_ty" id="msgDiv2" style="display:none">Thank you, you've been signed up!</div>
+           </div>
+           <div class="col-xs-3" style="padding:0;"><div class="cb_signup_submit" id="submitBtn2">
+			<input value="Send" type="submit">
+		</div><!-- /cb_signup_submit --></div></div>
+
+</div>
+        </div>
+        
+        <div class="dv_14"></div>
+        
+  </div>
+        
+    </div><!-- /.container -->
+    
+    <div class="dv_36"></div>
+    
+<div class="cb_wrap cb_bgc_1">
+  <div class="container" style="padding:0; text-align:center;">
+  
+  
+  <div class=dv_20></div><div class=dv_55></div>
+    <svg width="25" height="30">
+  <image xlink:href="imgs/logo_ft.svg" src="imgs/logo_ft.png" width="25" height="30" alt="crazybaby"/>
+</svg>
+  <div class=dv_36></div>
+  <div class=cb_line>
+    <p class="cbp">© 2014 Crazybaby. All rights reserved. </p>
+    	<ul class="piped">
+		    <li><a href="legal.html?p=1" class=first>Terms of Use</a></li>
+		    <li><a href="legal.html?p=2">Privacy Policy</a></li>
+      <li><a href="mailto:service@crazybaby.com">Email</a></li>
+      <li><a href="imgs/press_kit.zip">Press Kit</a></li></ul></div>
+  <div class=dv_55></div>
+  <div style="display:none">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253435723'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s6.cnzz.com/z_stat.php%3Fid%3D1253435723%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+  </div>
+  </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/jquery-scrolltofixed-min.js"></script>
+    
+    <script>
+				$(document).ready(function() {
+
+		
+		 $('#nav_mars').scrollToFixed({
+        preFixed: function() { $(this).find('h1').css('border-color', '#363532');  },
+        postFixed: function() { $(this).find('h1').css('border-color', ''); }
+    });
+		
+		$('#nav_mars_2').scrollToFixed();
+});
+		</script>
+    <script>
+		 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		 ga('create', 'UA-55901630-1', 'auto');
+		 ga('send', 'pageview');
+
+		</script>
+<!-- Google Tag Manager -->
+<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-NDFL34"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'http://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NDFL34');</script>
+<!-- End Google Tag Manager -->
+  </body>
+</html>
