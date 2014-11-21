@@ -24,15 +24,27 @@
     
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
-    <!--script src="http://js.maxmind.com/js/geoip.js" type="text/javascript"></script-->
-    <script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8" charset="utf-8"></script>
+   
     <style type="text/css">
 
 h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font-size:34px; }
 
 		</style>
+
 	<script src="http://cdn.optimizely.com/js/2180282538.js"></script>
 		<script src="js/jquery.min.js"></script>
+		
+		
+		<script type="text/javascript">
+		  // plain JavaScript example
+		  function jsonpCallback(data) { 
+		    if(data.address.country=="China"){
+		    	window.location.href="cn/";
+		    }
+		 }
+		</script>
+		<script src="http://api.wipmania.com/jsonp?callback=jsonpCallback" type="text/javascript"></script>
+
     <script>
     	
 			function playPause() {
@@ -58,16 +70,7 @@ h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font
 				}
 			}
 			
-			function areaCheck(){
-				
-				var i=returnCitySN;
-				if(i.cname!="国内未能识别的地区"){
-					window.location.href="cn/";
-				}
-		
-			}
-		  
-		  document.onload=areaCheck();
+			
 		  <!--
 			$(document).ready(function() {
 
