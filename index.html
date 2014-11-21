@@ -33,6 +33,7 @@ h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font
 	<script src="http://cdn.optimizely.com/js/2180282538.js"></script>
 		<script src="js/jquery.min.js"></script>
     <script>
+    	
 			function playPause() {
 		 		
 				var myVideo = document.getElementsByTagName('video')[0];
@@ -63,6 +64,8 @@ h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font
 				}
 		
 			}
+		  
+		  document.onload=areaCheck();
 		  
 			$(document).ready(function() {
 
@@ -124,7 +127,7 @@ h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font
 			});
 			
 			 
-			document.onload=areaCheck();
+			
 			
 		</script>
   </head>
