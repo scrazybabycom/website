@@ -24,7 +24,8 @@
     
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
-    <script type='text/javascript' src='http://j.maxmind.com/app/geoip.js'> </script>
+    <!--script src="http://js.maxmind.com/js/geoip.js" type="text/javascript"></script-->
+    <script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8" charset="utf-8"></script>
     <style type="text/css">
 
 h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font-size:34px; }
@@ -59,9 +60,9 @@ h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font
 			
 			function areaCheck(){
 				
-				var area = geoip_country_code();
-				if(area=="CN"){
-				  window.location.href="cn/";
+				var i=returnCitySN;
+				if(i.cname!="国内未能识别的地区"){
+					window.location.href="cn/";
 				}
 		
 			}
