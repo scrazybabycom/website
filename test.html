@@ -59,13 +59,12 @@ h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font
 			}
 			
 			function areaCheck(){
-				var i=returnCitySN;
-alert('您的IP<u>' + i['cip'] + '</u>归属地为<u>' + i['cname'] + '</u>');
-				var area = geoip_country_code();
-				if(area=="CN"){
-				  window.location.href="cn/";
-				}
-		
+				
+					var i=returnCitySN;
+					
+					window.location.href="cn/";
+					
+				
 			}
 		  
 		  document.onload=areaCheck();
