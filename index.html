@@ -36,11 +36,21 @@ h1 {text-align:left; font-family: 'Open Sans', sans-serif; font-weight:300; font
 		
 		
 		<script type="text/javascript">
+			var url = document.location.href;
+			
+			if(url.indexOf("www.crazybaby.com")==-1){
+				url = url.replace("crazybaby.com","www.crazybaby.com")
+				
+				window.location.href=url;
+			}
 		  // plain JavaScript example
-		  function jsonpCallback(data) { 
+		  function jsonpCallback(data) {
+		  	
+		
 		    if(data.address.country=="China"){
-		    	window.location.href="cn/";
+		    	window.location.href="cn/index.html";
 		    }
+			  
 		 }
 		</script>
 		<script src="http://api.wipmania.com/jsonp?callback=jsonpCallback" type="text/javascript"></script>
