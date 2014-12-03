@@ -1,0 +1,70 @@
+<!DOCTYPE html> <html ng-app='servicesApp'> <head> <meta charset='utf-8'> <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'> <meta content='width=device-width, initial-scale=1.0' name='viewport'> 
+ 
+<link href='//www.crazybaby.com/' rel='canonical'> <meta content='//www.crazybaby.com/' property='og:url'> <meta content='http://www.crazybaby.com/assets/images/fb-crazybaby-mars.jpg' property='og:image'> <meta content='Mars by CrazyBaby' property='og:title'> <meta content='Crazybaby' property='og:site_name'> <meta content='Crazybaby technology' property='og:description'> <meta content='website' property='og:type'> <meta content='Crazybaby technology' name='description'> <title>Mars by CrazyBaby</title> <link href='/assets/images/apple-touch-icon-iphone4-precomposed_256x256.png' rel='apple-touch-icon'> <link href='assets/images/favicon.ico?v=1' rel='favicon'> <link href="/assets/stylesheets/all.css" rel="stylesheet" type="text/css"/> <script src="/assets/javascripts/servicesApp/angular.min.js" type="text/javascript"></script><script src="/assets/javascripts/servicesApp/angular-sanitize.min.js" type="text/javascript"></script><script src="/assets/javascripts/servicesApp/angular-animate.min.js" type="text/javascript"></script><script src="/assets/javascripts/servicesApp/prismic.io-1.0.26.min.js" type="text/javascript"></script><script src="/assets/javascripts/servicesApp/angular-prismicio.min.js" type="text/javascript"></script><script src="/assets/javascripts/servicesApp/app.js" type="text/javascript"></script><script src="/assets/javascripts/servicesApp/indiegogoService.js" type="text/javascript"></script><script src="/assets/javascripts/all.js" type="text/javascript"></script> </head> <body class='index'> <div id='fb-root'></div> <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=783324618376153&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script> <header> 
+    	
+    	<div class='column'> <h1>Crazybaby</h1> <a class="button1" data-scroll-to="#indiegogo" data-tracking="topNav_cta" href="#indiegogo">预售购买</a> </div> </header> <article id='intro'> <div class='column'> <a class="play" data-tracking="video_cta" href="#">Play</a> <h1>Mars</h1> <p>磁悬浮蓝牙便携HiFi音响组合</p> <a class="more" data-scroll-to="#press" href="#press">See more</a> <script id='top_video' type='text/template'>
+          <iframe frameborder='0' height='360' src='http://player.youku.com/player.php/sid/XODM5NTA5NjY4/v.swf' width='640'></iframe>
+        </script> </div> </article> <article id='sound_tech'> <div class='column'> <h2>极致智能音频 如梦如幻视听</h2> <p>充满禅意，静静浮于空中的Mars Craft，由于避免了与平面接触所发生的共振，带来将音质损耗降至最低的纯净音质。360°环绕音，让乐音充满空间。</p> </div> </article> <article id='indiegogo' ng-controller='PrismicController'> <div class='column'><div class='block general' ng-cloak ng-controller='InfoController'><img alt="Indiegogo" src="/assets/images/logo_indiegogo.png"/> <dl> <dt>Supporters</dt> <dd> <strong>{{data.currency.symbol}}{{data.collected_funds | number}}</strong> Raised of <strong>{{data.currency.symbol}}{{data.goal | number}}</strong> Goal </dd> </dl> <dl class='inline'> <dd>{{data.collected_funds / data.goal * 100 | number}}%</dd> <dt>Funded</dt> <dd>{{data.contributions_count | number}}</dd> <dt>Contributors</dt> <dd>{{data.funding_ends_at}}</dd> <dt>Days Left</dt> </dl></div><div class='block backer_level' ng-animate ng-animate-stagger ng-cloak ng-repeat="info in data | orderBy: 'order'"><div class='vertical-aligner'> <h4> {{ info.price | currency }} <small>USD</small> </h4> <h3> {{ info.title }} <small>{{ info.description }}</small> </h3> <p ng-bind-html='info.copy'></p> <div class='details'> <a class='button' data-tracking='{{info.tracking_alias}}' href='#' ng-class="{'disabled': info.isSoldOut()}" ng-href='{{info.url}}' target='_blank'> {{info.isSoldOut() ? 'Sold Out!' : 'Pre-order now!' }} </a> <p ng-if="info.available!= 'Unlimited'"> Qty available: {{info.available}} out of {{info.total}} </p> <p> Est. delivery: <span data-id='delivery' ng-bind=" info.delivery_date | date : ' MMM yyyy' "></span> </p> </div> </div></div></div> </article> <article class='slide' id='sound_projection'> <div class='column'> <div class='caption'> <h2>360&deg; 环绕音效</h2> <p>空间内的每位听众都将享受到高质量、无差别的纯净乐音。</p> </div> </div> </article> <article class='slide right_caption' id='waterproof'> <div class='column'> <div class='caption'> <h2>4.	7级防水，坚实耐用</h2> <p>Mars Craft极轻极薄，航空级铝合金外壳优雅耐用，防水防沙防摔打，无惧户外风雨泥泞。</p> </div> </div> </article> <article class='slide' id='proximity'> <div class='column'> <div class='caption'> <h2>自动音量调节</h2> <p>通过配对后的蓝牙感知您的方位而自动进行音量调节，无论距离远近，听到的音量恒定。</p> </div> </div> </article> <article class='slide right_caption' id='microphone'> <div class='column'> <div class='caption'> <h2>高灵敏度麦克风</h2> <p>匹配办公需求，内置高灵敏度麦克风、USB充电插口，可以使用Mars进行通话语音高度清晰的电话会议。</p> </div> </div> </article> <article id='features'> <div class='mobile_header'> <h2>优异配置</h2> </div> <div class='column'> <h2>优异配置</h2> <section> <h3>Mars Craft&trade; 360&deg; 环绕音响</h3> <img alt="Mars Craft 360 degree speaker features" src="/assets/images/bg_features_speaker.jpg"/> <img alt="Mars Craft 360 degree speaker features" class="mobile" src="/assets/images/bg_features_speaker_mobile.jpg"/> </section> <section> <h3>Mars Base&trade; 低音炮底座</h3> <img alt="Mars Craft subwoofer station features" src="/assets/images/bg_features_subwoofer.jpg"/> <img alt="Mars Craft subwoofer station features" class="mobile" src="/assets/images/bg_features_subwoofer_mobile.jpg"/> </section> </div> </article> <article id='specs'> <div class='mobile_header'> <h2>规格参数</h2> </div> <div class='column'> <h2>规格参数</h2> <dl class='timeline'> <dt>Mars Craft</dt> <dd> 直径: 120mm (4.7”) <br> 高度: 33mm (1.3”) <br> 重量: 362g (0.79 lb) <br> Craft发声单元由1.75英寸超薄全频扬声器与无源辐射器构成。负责Mars亮丽的中音与清脆的高音，单独使用Craft时，无源辐射器将有效补充低音。 </dd> <dt>Mars Base</dt> <dd> 直径: 132mm (5.2”) <br> 高度: 200mm (7.9”) <br> 重量: 1534g (3.38 lb) <br> 4.5英寸低音炮单元负责强有力的低音Bass部分。 </dd> <dt>音频</dt> <dd> 360&deg; 环绕音效 <br> 系统设置向导 <br> AptX 授权音频解码器 （CD音质的蓝牙音响效果） <br> AAC音频解码 <br> 内置高灵敏度宽频麦克风 </dd> <dt>连接</dt> <dd> 低耗蓝牙4.0 <br> USB外接插口（低音炮底座） </dd> <dt>磁悬浮</dt> <dd> 1.2英寸悬浮高度 <br> Gravitron® 定制磁悬浮模组 </dd> <dt>续航能力与电池</dt> <dd> Mars Craft 8小时不间断播放 <br> Mars Base 低音炮底座8小时不间断播放 <br> 底座内置可续充锂电池 <br> USB可支持充电级别：5V，1.0 A <br> Mars Craft自动升降充电 </dd> </dl> </div> </article> 
+        	<article id='aptx'> <div class='mobile_header'> <h2> CSR aptX <sup>&reg;</sup> </h2> </div> <div class='column'> <h2> CSR aptX <sup>&reg;</sup> </h2> <div class='module'> <div class='overlay'> <img alt="aptX" src="/assets/images/aptx_logo.png"/> <p> 搭载4.5” 高振幅低音炮与1.75”高灵敏度铷磁铁喇叭单元, Mars覆盖了 50Hz – 20kHz的频响范围。 加上aptX&reg; 授权音频解码技术，使蓝牙音响拥有了CD般的现场原音效果。 </p> </div> </div> </div> </article> <article id='iphone_control'> <div class='mobile_header'> <h2>Stereo Sound</h2> </div> <div class='column'> <h2>自由掌控Mars，无论苹果安卓</h2> <p>使用您的智能手机，下载Mars App，即可进行自动音量、跟随播放、立体声配对等智能操作。</p> <h3> <strong>立体声组合:</strong> 通过App对两套Mars进行组合配对，将给您带来震撼的立体声体验。 </h3> </div> </article> <article id='people'> <div class='mobile_header'> <h2>Crazybaby团队</h2> </div> <div class='column'> <h2>Crazybaby团队</h2> <ul><li><figure> <img alt="Allen Zhang" src="/assets/images/img_allen_zhang.jpg"/> <p class='bio'>·音频领域的先锋设计师
+·在产品策略、品牌营销、生产制造方面有近10年经验
+·曾为宝丽来、Skullcandy等知名品牌提供完整的产品解决方案
+</p> </figure> <strong>张海星</strong> 创始人&首席设计师</li><li><figure> <img alt="Linda Zhao" src="/assets/images/img_linda_zhao.jpg"/> <p class='bio'>·曾先后担任TCL与世联地产高管
+·精通音频硬件品控、专利管理、品牌建设
+</p> </figure> <strong>赵凌燕</strong> 联合创始人</li><li><figure> <img alt="Davis Lin" src="/assets/images/img_davis_lin.jpg"/> <p class='bio'>·15年发烧级音频产品研发经验
+·为多家企业担任客座声学顾问
+</p> </figure> <strong>林文聪</strong> 声学工程师</li><li><figure> <img alt="Fuchiao Chan" src="/assets/images/img_fuchiao_chan.jpg"/> <p class='bio'>顶尖华人工业设计师。曾在伦敦，巴黎，香港等地进行设计工作。工业设计和现在内饰设计双硕士学位。</p> </figure> <strong>詹富乔</strong> 工业设计师</li><li><figure> <img alt="Steven Zhu" src="/assets/images/img_steven_zhu.jpg"/> <p class='bio'>·资深科技极客
+·负责系统架构&应用开发
+</p> </figure> <strong>朱田俊</strong> 技术主管</li><li><figure> <img alt="Ryan Zhao" src="/assets/images/img_ryan_zhao.jpg"/> <p class='bio'>·精通人类行为预测的定量分析，十年金融业与零售业的客户分析经验
+·数据挖掘与生物统计学双硕士&舒立克商学院市场营销课程讲师
+</p> </figure> <strong>赵强</strong> 首席用户体验官</li><li><figure> <img alt="Charles Zhang" src="/assets/images/img_charles_zhang.jpg"/> <p class='bio'>·90后设计师兼数码发烧友
+·曾为思科与贝尔金提供作品
+</p> </figure> <strong>张子辰</strong> UI/UX</li><li><figure> <img alt="Aviva Ren" src="/assets/images/img_aviva_ren.jpg"/> <p class='bio'>·21世纪初第一次互联网浪潮参与者
+·资深广告人，十年市场经验
+·毕业于罗马智德大学，科幻小说迷&摇滚迷
+</p> </figure> <strong>任春亚</strong> 市场总监</li><li><figure> <img alt="Summer Su" src="/assets/images/img_summer_su.jpg"/> <p class='bio'>·狂热的90后吉他手
+·香港浸会大学传播学硕士
+</p> </figure> <strong>苏默蓉</strong> 媒体公关</li><li><figure> <img alt="Tod Xu" src="/assets/images/img_tod_xu.jpg"/> <p class='bio'>·90后逗比&耳机发烧友
+·两年艺术品电商经验
+</p> </figure> <strong>徐子元</strong> 客户服务</li></ul> </div> </article> <article id='creation'> <div class='mobile_header'> <h2>Mars诞生记</h2> </div> <div class='column'> <h2>Mars诞生记</h2><figure><img alt="Allen Zhang" src="/assets/images/img_creating-mars_left.jpg"/> <figcaption>创始人/主设计师 Allen Zhang 展示Mars的原始创意样机。</figcaption></figure><figure><img alt="Allen Zhang working with the engineering team" src="/assets/images/img_creating-mars_right.jpg"/> <figcaption>调试第一个Mars样机。</figcaption></figure></div> </article> <article id='roadmap'> <div class='mobile_header'> <h2>项目进度</h2> </div> <div class='column'> <h2>项目进度</h2> <dl class='timeline'> <dt>2013.5</dt> <dd>Crazybaby小团队集合</dd> <dt>2013.7</dt> <dd>使用3D打印机打印了Mars Craft原型模组</dd> <dt>2014.1</dt> <dd>使用GRAVITRON磁铁模组的样机组装成功</dd> <dt>2014.5</dt> <dd>音频样本调试完毕</dd> <dt>2014.8</dt> <dd>iOS版APP启动测试</dd> <dt>2014.12</dt> <dd>启动全球众筹</dd> <dt class='future first'>2015.1</dt> <dd class='future'>工程样机测试</dd> <dt class='future'>2015.2</dt> <dd class='future'>双重测试开始</dd> <dt class='future'>2015.4</dt> <dd class='future'>Mars正式发货</dd> </dl> </div> </article> <article id='faq'><p>&copy; 2014 Crazybaby. All Rights Reserved</p> </div> </footer> <div class='ad-words-trigger'></div> <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-55901630-1', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+    </script> <script src='//cdn.optimizely.com/js/2180282538.js'></script> <script>
+      (function() {
+        var _fbq = window._fbq || (window._fbq = []);
+        if (!_fbq.loaded) {
+          var fbds = document.createElement('script');
+          fbds.async = true;
+          fbds.src = '//connect.facebook.net/en_US/fbds.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(fbds, s);
+          _fbq.loaded = true;
+        }
+        _fbq.push(['addPixelId', '725848564162524']);
+      })();
+      window._fbq = window._fbq || [];
+      window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script>
+    <div style="display:none">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253435723'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s6.cnzz.com/z_stat.php%3Fid%3D1253435723%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+     <noscript> <img alt='' height='1' src='https://www.facebook.com/tr?id=725848564162524&amp;amp;ev=PixelInitialized' style='display:none' width='1'> </noscript> <script>
+      /* <![CDATA[ */
+      var google_conversion_id = 961235741;
+      var google_custom_params = window.google_tag_params;
+      var google_remarketing_only = true;
+      /* ]]> */
+    </script> <script src='//www.googleadservices.com/pagead/conversion.js'></script> <noscript> <div style='display:inline;'> <img alt='' height='1' src='//googleads.g.doubleclick.net/pagead/viewthroughconversion/961235741/?value=0&amp;amp;guid=ON&amp;amp;script=0' style='border-style:none;' width='1'> </div> </noscript> </body> </html>

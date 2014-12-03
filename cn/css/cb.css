@@ -34,12 +34,18 @@ body {
 .cb_hero {position:relative; clear:both; display:block; left:0; right:0; margin:0 0px 0 0px; height:auto; overflow:hidden; background:none;}
 .cb_hero img {margin:0 auto;}
 
+.cb_hero_btn { display:inline-block; margin:0; padding:13px 52px; line-height:18px; font-size:14px; background:none;  border-radius:2px; border:#ddd 1px solid; cursor:pointer; color:#ddd}
+.cb_hero_btn:hover {color:#ddd; text-decoration:none;}
+.hero_btn_on {background:#2878EB; border-color:#2878EB;  color:#ddd;}
+.hero_btn_on:hover {color:#ddd; text-decoration:none;}
+
+.hero_link {color:#999; font-size:12px;}
+.hero_link:hover {color:#999;}
 
 @media (min-width:1200px) {
 .cb_hero { height:auto;
 }
 }
-
 
 .cb_pic {position:relative;left:0; right:0; margin:0 0px 0 0px; height:auto; overflow:hidden; background:#1b1b1b;}
 .cb_pic img {margin:0 auto;}
